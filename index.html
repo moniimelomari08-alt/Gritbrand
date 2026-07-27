@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRIT — Streetwear</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">GRIT</div>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+      Cart (<span id="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">NEW DROP 2026</p>
+        <h1>Built for those who never quit.</h1>
+        <p class="hero-text">
+          Premium oversized streetwear designed for everyday grind.
+        </p>
+        <a href="#shop" class="primary-btn">Shop Now</a>
+      </div>
+    </section>
+
+    <section id="shop" class="products-section">
+      <div class="section-head">
+        <h2>THE DROP</h2>
+        <p>Limited pieces. No restock promised.</p>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <h3>Oversized Tee</h3>
+              <p>Heavy cotton · 240 GSM</p>
+            </div>
+            <div class="product-bottom">
+              <strong>399 DH</strong>
+              <button onclick="addToCart('Oversized Tee', 399)">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <h3>Essential Tee</h3>
+              <p>Soft cotton · Everyday fit</p>
+            </div>
+            <div class="product-bottom">
+              <strong>299 DH</strong>
+              <button onclick="addToCart('Essential Tee', 299)">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <h3>Vintage Tee</h3>
+              <p>Washed finish · Relaxed fit</p>
+            </div>
+            <div class="product-bottom">
+              <strong>349 DH</strong>
+              <button onclick="addToCart('Vintage Tee', 349)">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>WHY GRIT?</h2>
+      <div class="about-grid">
+        <div>
+          <h3>Premium Cotton</h3>
+          <p>Heavyweight fabrics that keep their shape after washing.</p>
+        </div>
+        <div>
+          <h3>Made in Morocco</h3>
+          <p>Locally produced with attention to fit and finishing.</p>
+        </div>
+        <div>
+          <h3>Fast Delivery</h3>
+          <p>Quick shipping across Morocco for every order.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Stay in the loop</h2>
+      <p>Get notified when the next drop goes live.</p>
+      <form onsubmit="subscribe(event)">
+        <input type="email" placeholder="Your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 GRIT. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-box">
+      <button class="close-cart" onclick="closeCart()">×</button>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        <strong>Total:</strong>
+        <span id="cart-total">0 DH</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
